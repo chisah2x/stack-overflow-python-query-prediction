@@ -1,19 +1,19 @@
 # stack-overflow-python-query-prediction
 
-1st component: Data Pipeline Component:
+### 1st component: Data Pipeline Component:
 
-data.xml is a semi-structure data which is scraped from the website stackoverflow.com
+#### data.xml is a semi-structure data which is scraped from the website stackoverflow.com
 
-following steps need to perform for creating data pipeline component.
+##### following steps need to perform for creating data pipeline component.
 
-i) creation and activation of virtual env 
-ii) installing all deps
-iii) create iam new user with s3,ec2 full access service then create access key
-iv) creat bucket 
-v) interact with falsk and s3 and getting all the data to webpage. 
-vi) Create Ec2 machine
-vii) connect to ec2 machine:
-viii) create account on rapid api and deploy the hosted link
+i) creation and activation of virtual env <br>
+ii) installing all deps <br>
+iii) create iam new user with s3,ec2 full access service then create access key <br>
+iv) creat bucket <br>
+v) interact with falsk and s3 and getting all the data to webpage. <br>
+vi) Create Ec2 machine. <br>
+vii) connect to ec2 machine and create hosted link. <br>
+viii) deploy the hosted link on rapid api. <br>
 
-completed first component.
+##### completed first component.
 
