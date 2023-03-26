@@ -30,15 +30,15 @@ python api.py
 vi) Create Ec2 machine
 
 vii) connect to ec2 machine:
-        inside vm terminal ---> cmd---> git clone https://github.com/rohanpatankar926/stackoverflow_query_prediction_dvc.git
-        cd stackoverflow_query_prediction_dvc
+        inside vm terminal ---> cmd---> git clone https://github.com/chisah2x/stack-overflow-python-query-prediction.git
+        cd stack-overflow-python-query-prediction
         sudo apt-get update
         sudo apt-get install python3
         sudo apt install python3-pip
         pip install -r requirements.txt
         nano api.py  -> open api.py file in terminal itself for editing purpose ---> change the port= 8000 and hostname=0.0.0.0 and debug = False ctrl+x  yes  enter
 
-        nano .env  rohan-> AWS_S3_BUCKET = "stackoverflowquery"     AWS_SECRET_ID = "AKIASIOGK7J7XMLB6EFY"
+        nano .env  
         cat .env
         python3 api.py
 
