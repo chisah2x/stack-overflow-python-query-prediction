@@ -55,5 +55,3 @@ data.xml is a semi-structure data which is scraped from the website stackoverflo
                 python get_data.py  in vsc   
 
                 finally completed first component.
-
-
