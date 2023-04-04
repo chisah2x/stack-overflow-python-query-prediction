@@ -1,31 +1,57 @@
-# stack-overflow-python-query-prediction
+data.xml is a semi-structure data which is scraped from the website stackoverflow.com
 
-### 1st component: Data Pipeline Component:
+        following steps need to perform for creating data pipeline component.
 
-#### data.xml is a semi-structure data which is scraped from the website stackoverflow.com
+        i) creation and activation of virtual env 
 
-##### following steps need to perform for creating data pipeline component.
+        virtualenv venv_name
+        .\venv_name\Scripts\activate 
 
-i) creation and activation of virtual env. <br>
-ii) installing all dependencies. <br>
-iii) create IAM user with s3,ec2 full access service on AWS then create access key. <br>
-iv) create s3 bucket. <br>
-v) interact with flask and s3 and getting all the data to webpage. <br>
-vi) Create Ec2 machine . <br>
-vii) connect to ec2 machine and create hosted link. <br>
-viii) deploy the hosted link on rapid api. <br>
+        ii) installing all deps
 
-##### completed first component.
+        pip install -r requirements.txt
 
-### 2nd component: ML Pipeline Component:
+        iii) create iam new user with s3,ec2 full access service then create access key
+        
+        pip install awscli   
+        pip install awscli --upgrade 
+        pip install boto3 --upgrade
+        aws configure 
+        aws configure list
 
-1-->make deps which are config.yml and params.yml and utils.yml <br>
-2-->make dvc.yaml and write 5 stage script <br>
-3-->install dvc 
-4-->dvc add main_data/data.xml <br>
-5-->dvc repro for 1 stage and again git add . and git commit -m "msg do for 5 times for 5 stages <br>
-6-->dvc plots show generates html template for showing the plot curve <br>
-7-->go to https://studio.iterative.ai and make account <br>
-8-->add a project and then add the main repository <br>
-9--> now u can able to track all the git commits wrt the data versions and also experiment and compare the models <br>
-10-->End
+        iv) creat bucket 
+        python s3_sync.py 
+        pip install xmltodict
+        python data_to_s3.py---> data sending to s3 bucket
+
+        v) interact with falsk and s3 and getting all the data to webpage. 
+        python api.py
+
+        vi) Create Ec2 machine
+
+        vii) connect to ec2 machine:
+                inside vm terminal ---> cmd---> git clone https://github.com/chisah2x/stack-overflow-python-query-prediction.git
+                go to directory of data pipeline component
+                sudo apt-get update
+                sudo apt-get install python3
+                sudo apt install python3-pip
+                pip install -r requirements.txt
+                nano api.py  -> port= 8000 and hostname=0.0.0.0 and debug = False 
+
+                nano .env  
+                cat .env
+                python3 api.py
+
+                go back in instance and copy link of Public IPv4 DNS: 
+                and http://ec2-3-109-62-182.ap-south-1.compute.amazonaws.com:8000  
+                http://ec2-3-109-62-182.ap-south-1.compute.amazonaws.com:8000/xml_data
+
+        viii) create account on rapid api and follow the steps and deploy the hosted link
+                data -> select any service -> python request -> copy and ctrl+A then ctrl+V in get_data.py and subscribe then
+                python3 get_data.py
+                
+                if you want creat your on api, go to myapi  -> add api project -> hub list -> View in hub ->   select python language and copy code and paste it in get_data.py in vsc
+
+                python get_data.py  in vsc   
+
+                finally completed first component.
